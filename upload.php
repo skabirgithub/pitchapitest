@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 $servername = "localhost";
 // $username = "root";
 // $password = "";
-$username = "raisahmed_apitest";
-$password = "raisahmed_apitest";
+$username = "skodr_pitchapitest";
+$password = "skodr_pitchapitest";
 $dbname = "apitest";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
