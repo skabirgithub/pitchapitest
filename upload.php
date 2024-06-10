@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Insert data into database
-        $stmt = $conn->prepare("INSERT INTO pitch (name, phone, title, rating, comment) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO pitches (name, phone, title, rating, comment) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssds", $name, $phone, $title, $rating, $comment);
         if ($stmt->execute()) {
             $lastInsertId = $stmt->insert_id;
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Move the uploaded file to the target directory
             if (move_uploaded_file($videoTmpPath, $targetFilePath)) {
                 // Update the video file path in the database
-                $stmt = $conn->prepare("UPDATE pitch SET video = ? WHERE id = ?");
+                $stmt = $conn->prepare("UPDATE pitches SET video = ? WHERE id = ?");
                 $stmt->bind_param("si", $targetFilePath, $lastInsertId);
                 if ($stmt->execute()) {
                     echo json_encode(['success' => 'Data and video file uploaded successfully.']);

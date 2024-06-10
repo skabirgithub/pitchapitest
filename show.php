@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $sql = "SELECT * FROM pitch";
+    $sql = "SELECT * FROM pitches";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
