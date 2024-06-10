@@ -7,7 +7,7 @@ $servername = "localhost";
 // $password = "";
 $username = "skodr_pitchapitest";
 $password = "skodr_pitchapitest";
-$dbname = "apitest";
+$dbname = "skodr_pitchapitest";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
